@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" href="/CSS/estilos.css">
+   <script type="text/javascript" src="JS/scripts.js"></script>
+</head>
+<body>
+<!--ENCABEZADO  DE TODAS LA PAGINAS-->
+    <header class ="encabezado">
+        <img class="logo" src="/imagenes/Perfil redes sociales.png" alt ="Logo de la empresa">
+    </header>
+    <!--BARRA DE NAVEGACION-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="/index.html">INICIO</a></li>
+            <li><a href ="/productos.html">PRODUCTOS</a></li>
+            <li><a href ="/nosotros.html">NOSOTROS</a></li>
+            <li><a href="/contactanos.html" class="activo">CONTACTANOS</a></li>
+        </ul>
+    </nav>
+
+    <!--Formulario-->
+      <section class="seccionForm">
+        <div class="contenedor">
+            <h2 class="tituloForm">Formulario de Contacto</h2>
+            <form id="formularioCont">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <div class="error-message" id="nombreError">El nombre es obligatorio y solo puede contener letras y espacios.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                    <div class="error-message" id="telefonoError">El teléfono es obligatorio y debe contener solo números (10 dígitos).</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                    <div class="error-message" id="correoError">El correo electrónico es obligatorio y debe tener un formato válido.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Escríbenos un comentario:</label>
+                    <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+                    <div class="error-message" id="comentariosError">Los comentarios no pueden exceder los 500 caracteres.</div>
+                </div>
+
+                <button type="submit" class="btnEnviarForm">Enviar</button>
+            </form>
+
+            <hr> 
+
+            <h2 class="comentarios-titulo">Comentarios Recibidos</h2>
+            <div id="seccionComentarios" class="seccion-comentarios"></div>
+
+        </div>
+    </section>
+    <!--PIE DE PAGINA -->
+   <footer>
+        <div class="piepagina">
+            <img class ="logopie" src="/imagenes/Perfil redes sociales.png" alt="Logo">  
+            <ul>
+                <li><img class="iconos" src="/imagenes/ubicacion.jpeg" alt="imgubi">Samacá, Boyacá</li>
+                <li><img class="iconos" src="/imagenes/whatsapp.jpeg"alt="imgtel">3203802253 3125039989 </li>
+                <li><img class="iconos" src="/imagenes/correo.png" alt="imgcor">dematildeyogurtg@gmail.com</li>
+                <li><img class="iconos" src="/imagenes/facebook.jpeg" alt="imgface">DeMatilde Yogurt Griego</li>
+                <li><img class="iconos" src="/imagenes/instagram.jpeg" alt="imginst">@dematildeyogurtg</li>
+            </ul>
+        </div>
+    </footer>
+    <button id="btnArriba" title="Volver arriba">↑</button>
+</body>
+</html>

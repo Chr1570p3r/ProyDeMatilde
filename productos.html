@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/CSS/estilos.css">
+    <script type="text/javascript" src="/JS/scripts.js"></script>
+    
+</head>
+<body>
+<!--ENCABEZADO  DE TODAS LA PAGINAS-->
+    <header class ="encabezado">
+        <img class="logo" src="/imagenes/Perfil redes sociales.png" alt ="Logo de la empresa">
+    </header>
+    <!--BARRA DE NAVEGACION-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="/index.html">INICIO</a></li>
+            <li><a href ="/productos.html" class="activo">PRODUCTOS</a></li>
+            <li><a href ="/nosotros.html">NOSOTROS</a></li>
+            <li><a href="/contactanos.html">CONTACTANOS</a></li>
+        </ul>
+    </nav>
+
+     <!--CARRUSEL CATALOGO-->
+    <section class="seccionCarrCat">
+        <div class ="carrusel">
+            <!--imaghne que cambiara-->
+            <img id="imagenCarrusel" src="/imagenes/catalogo1.jpg" alt="Imagen del  carrusel">
+            <!--Boton anterior-->
+            <button class="boton prev" onclick= cambiarImagen(-1)>&#10094;</button>
+            <!--Boton siguiente-->
+            <button class="boton next" onclick= cambiarImagen(1) >&#10095;</button>
+        </div>
+    </section>
+
+     <script>
+        //lista de urls de las rutas de los elementos 
+        const imagenes =[
+            "/imagenes/catalogo1.jpg",
+            "/imagenes/catalogo2.jpg",
+            "/imagenes/catalogo3.jpg",
+            "/imagenes/catalogo4.jpg"
+        ];
+        //indice actual de la imagen mostrada
+        let indiceActual=0;
+
+        const imagenCarrusel= document.getElementById("imagenCarrusel")
+        //Funcion para cambiar imagen segun la direccion 
+        function cambiarImagen(direccion){
+            //Actualizar el indice
+            indiceActual += direccion  //indice actual=indiceactual +direccion
+            if(indiceActual>=imagenes.length){
+                indiceActual=0;
+            }
+            else if(indiceActual<0){
+                indiceActual=imagenes.length -1;
+            }
+            imagenCarrusel.src=imagenes[indiceActual]
+        }
+    </script>
+    <!--PIE DE PAGINA -->
+    <footer>
+        <div class="piepagina">
+            <img class ="logopie" src="/imagenes/Perfil redes sociales.png" alt="Logo">  
+            <ul>
+                <li><img class="iconos" src="/imagenes/ubicacion.jpeg" alt="imgubi">Samacá, Boyacá</li>
+                <li><img class="iconos" src="/imagenes/whatsapp.jpeg"alt="imgtel">3203802253 3125039989 </li>
+                <li><img class="iconos" src="/imagenes/correo.png" alt="imgcor">dematildeyogurtg@gmail.com</li>
+                <li><img class="iconos" src="/imagenes/facebook.jpeg" alt="imgface">DeMatilde Yogurt Griego</li>
+                <li><img class="iconos" src="/imagenes/instagram.jpeg" alt="imginst">@dematildeyogurtg</li>
+            </ul>
+        </div>
+    </footer>
+    <button id="btnArriba" title="Volver arriba">↑</button>
+</body>
+</html>

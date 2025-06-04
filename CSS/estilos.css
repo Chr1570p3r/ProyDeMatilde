@@ -1,0 +1,636 @@
+
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding:0;
+    background-color: rgb(255, 255, 255);
+    color: #333;
+    align-items: center;
+    justify-content:center ;
+    height: 100vh;
+}
+/*ENCABEZADO*/
+.encabezado{
+    background-image: url(/imagenes/Fondo.jpg);
+    padding: auto;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;  
+}
+.logo{
+    margin: 8px;
+    width: 180px;
+}
+/*BARRA DE NAVEGACION*/
+.navegacion ul{
+    display: flex;
+    flex-direction: row; /*Permite alinear el menú de acuerdo al tamaño de la pantalla*/
+    flex-wrap: wrap; /* para que se adapte en pantallas pequeñas */
+    justify-content: center;
+    margin:0;
+    padding: 20px;
+    list-style: none;
+    background-color: #78abab;;
+
+}
+.navegacion li{
+    font-size:medium;
+    text-align: center;
+    margin: 0 100px;
+    border-color: rgb(91, 91, 91);
+    width: 120px;
+    border-radius:20px;
+    padding: 10px;
+    border-width: 1px;
+    border-style:solid;
+    background-color:rgb(255, 255, 255);;
+    box-shadow: 6px 6px 5px rgb(0,0,0,0.5);
+    
+}
+
+.navegacion a{
+    text-decoration: none;   
+}
+
+.navegacion li:hover,
+.navegacion .activo{
+    background-color: #9dbfce;
+
+}
+/*CARRUSEL INFINITO*/
+.carruselin{
+    margin: 0 auto;
+    padding: 10px 0;
+    max-width: 90%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex: 0 0 100%;
+
+    &:hover .group {
+      animation-play-state: paused;
+    }
+  }
+.group {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+    will-change: transform;
+    animation: scrolling 10s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes scrolling {0%
+        {transform: translateY(0%);
+    }
+    100%
+        {transform: translateX(-100%);
+    }
+    
+  }
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card img {
+  width: 160px; /* Ancho fijo para cada imagen por defecto */
+  height: 170px; /* Alto fijo para cada imagen por defecto */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 20px 0; /* Ajustado el alpha de la sombra */
+  padding: 10; 
+    min-height: 150px;    
+}
+
+/*CONTENI DEL INDEX*/
+.seccionPrincipalIn {
+  padding: 20px; /* Espaciado alrededor de toda la sección */
+  max-width: 1200px; /* Ancho máximo para la sección en pantallas grandes */
+  margin: 0 auto; /* Centra la sección en la página */
+}
+/* Contenedor de las dos columnas (izquierda y derecha) */
+.principal {
+  display: flex; /* Habilita Flexbox para las columnas */
+  flex-direction: row; /* Por defecto, las columnas se organizan en fila */
+  flex-wrap: wrap; /* Permite que las columnas salten a la siguiente línea si no hay espacio */
+  justify-content: center; /* Centra las columnas horizontalmente */
+  align-items: stretch; /* Asegura que ambas columnas tengan la misma altura si su contenido lo permite */
+  background-color: #78abab; /* Color de fondo del contenedor principal */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que los contenidos no se salgan si hay bordes redondeados */
+}
+/* Estilos generales para el texto dentro de .principal */
+.principal div {
+  font-size: 1rem; /* Usar unidades relativas para el tamaño de fuente */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+}
+/* Columna izquierda (texto) */
+.izquierda {
+  display: flex;
+  flex-direction: column; /* Apila los elementos (título, párrafos) verticalmente */
+  flex: 1; /* Permite que la columna crezca y ocupe el espacio disponible */
+  min-width: 300px; /* Ancho mínimo para que la columna no se haga demasiado pequeña */
+  background-color: white; /* Color de fondo para esta columna */
+  margin: 20px; /* Margen exterior para separarla del contenedor principal */
+  padding: 20px; /* Espacio interior para el contenido */
+  border-radius: 8px; /* Bordes redondeados internos */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+.titIzq {
+  font-size: 2.2rem; /* Tamaño del título principal */
+  margin-bottom: 15px; /* Espacio debajo del título */
+  color: #333;
+}
+.izquierda p {
+  margin-bottom: 15px; /* Espacio entre párrafos */
+  color: #555;
+  text-align: justify; /* Justifica el texto para una mejor apariencia */
+}
+/* Columna derecha (imagen de características) */
+.derecha {
+  display: flex;
+  flex-direction: column; /* Apila el título y la imagen verticalmente */
+  flex: 1; /* Permite que la columna crezca y ocupe el espacio disponible */
+  min-width: 300px; /* Ancho mínimo para que la columna no se haga demasiado pequeña */
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  padding: 20px; /* Espacio interior */
+}
+.car {
+  font-size: 2rem; /* Tamaño del título de características */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  color: #fff; /* Color de texto para que contraste con el fondo del .principal */
+  text-align: center; /* Centra el texto */
+}
+.img {
+  max-width: 100%; /* La imagen se ajustará al ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Elimina espacio extra debajo de la imagen */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/*PIE DE PAGINA*/
+footer {
+  background-color: #f0f0f0; /* Un color de fondo para que el footer destaque */
+  color: #333; /* Color de texto para contraste */
+  padding: 20px 0; /* Espacio arriba y abajo del footer */
+  width: 100%; /* Asegura que el footer ocupe todo el ancho */
+}
+
+.piepagina {
+  display: flex;
+  /* Por defecto, los elementos se alinearán horizontalmente.
+     Flex-wrap: wrap permitirá que los elementos salten a la siguiente línea si no hay espacio. */
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribuye el espacio entre los elementos */
+  align-items: center; /* Centra verticalmente los elementos en la misma línea */
+  max-width: 1200px; /* Ancho máximo para el contenido del footer en pantallas grandes */
+  margin: 0 auto; /* Centra el contenido del footer en la página */
+  padding: 0 20px; /* Padding horizontal para evitar que el contenido toque los bordes */
+  font-size: 1rem; /* Usamos unidades relativas para el tamaño de fuente */
+}
+
+.logopie {
+  /* Establecemos un ancho máximo para que el logo no sea demasiado grande
+     y permitimos que se encoja en pantallas pequeñas. */
+  max-width: 150px;
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin: 10px; /* Espacio alrededor del logo */
+  flex-shrink: 0; /* Evita que el logo se encoja más allá de lo necesario */
+}
+
+.piepagina ul {
+  list-style: none;
+  display: flex; /* Hacemos que los elementos de la lista sean flex-items */
+  flex-wrap: wrap; /* Permitimos que los ítems de la lista salten de línea */
+  justify-content: center; /* Centra los ítems de la lista horizontalmente */
+  padding: 0; /* Quitamos el padding por defecto de la lista */
+  margin: 10px 0; /* Margen arriba y abajo */
+  flex-grow: 1; /* Permite que la lista ocupe el espacio disponible */
+}
+
+.piepagina li {
+  display: flex; /* Hace que cada ítem de la lista sea un flex container */
+  align-items: center; /* Centra el icono y el texto verticalmente */
+  white-space: nowrap; /* Evita que el texto de cada ítem se rompa en varias líneas */
+  margin: 10px 20px; /* Margen alrededor de cada ítem para separarlos */
+  font-size: 0.95rem; /* Ajusta el tamaño de fuente de los ítems */
+}
+
+.iconos {
+  width: 30px; /* Tamaño más manejable para los iconos */
+  height: auto; /* Mantiene la proporción */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+  flex-shrink: 0; /* Evita que los iconos se encojan */
+}
+
+
+/*CARRUSEL*/
+.seccionCarrCat{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    }
+
+.carrusel{        
+        display: flex;        
+        width: 675px;
+        height: 990px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2 );
+        overflow: hidden;/*ocultar cualquier contenido que se desborde*/
+    }
+    /*imagen visible en el carrusel*/
+
+    .carrusel img{
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        /*propiedad, dureccion, tipo de aceleracion*/
+        transition: opacity 0.5s ease-in-out;
+        /*Se usa para controlar como se ajusta una imagen dentro de su contenedor*/
+        object-fit: cover;
+    }
+    .boton{
+        position: absolute;
+        top: 50%;
+        background-color:rgba(0, 0, 0, 0.5 );
+        color: #f0f0f0;
+        border: none;
+        font-size: 2rem;
+        padding: 0.5rem  1rem;
+        cursor: pointer;
+        z-index: 10;
+        transform: translateY(-50%);  
+      }
+
+      .boton:hover{
+        background-color: rgba(0, 0, 0, 0.9)
+      }
+      .next{
+        right: 10px;
+      }
+
+      .prev{
+        left: 10px;
+      }
+/*VIDEO*/
+
+.seccionVideo {
+  padding: 20px; /* Un poco de espacio alrededor de todo el contenido de la sección */
+  max-width: 1200px; /* Opcional: define un ancho máximo para la sección si no quieres que se extienda demasiado */
+  margin: 0 auto; /* Opcional: centra la sección en la página */
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* CRUCIAL: Necesario para que el video se posicione absolutamente dentro */
+  width: 100%; /* El contenedor ocupará todo el ancho disponible de su padre (la sección) */
+  max-width: 1150px; /* Establece un ancho máximo para el contenedor del video */
+  margin: 0 auto; /* Centra el contenedor del video horizontalmente dentro de la sección */
+  padding-bottom: 86.95%; /* ¡Ajusta este porcentaje a la proporción exacta de tu video! */
+  height: 0; /* IMPORTANTE: Colapsa la altura del div, ya que padding-bottom la define */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  border-radius: 10px; /* Aplica el borde redondeado al contenedor del video */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aplica la sombra al contenedor */
+  border: 1px solid #1e8fc0; /* Aplica el borde al contenedor para que se vea completo */
+}
+
+.video video {
+  position: absolute; /* Posiciona el video absolutamente dentro del contenedor .video */
+  top: 0;
+  left: 0;
+  width: 100%; /* El video ocupará el 100% del ancho de su contenedor padre */
+  height: 100%; /* El video ocupará el 100% del alto de su contenedor padre */
+}
+
+
+/*FORMULARIO*/
+.seccionForm {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    margin: 0;
+}
+.contenedor {
+    background-color: #78abab;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+.tituloForm {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none; /* Oculto por defecto */
+}
+.btnEnviarForm {
+    background-color: #1e8fc0;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.btnEnviarForm:hover {
+    background-color: #A49C94 ;
+}
+
+/* Estilos para la sección de comentarios */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000000;
+    margin: 30px 0;
+}
+
+.comentarios-titulo {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.seccion-comentarios {
+    margin-top: 20px;
+}
+
+.comentario-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.comentario-item strong {
+    color: #1e8fc0;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.comentario-item p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+
+/*PUBLICIDAD */
+/*Estilo para el overlay (Imagen publicitaria)*/
+        #overlay{
+            /*Fijar el overlay (div) para que ocupe toda la ventana*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /*vw 100% del ancho visible del navegador*/
+            height: 100vh; /*vh 100% del alto visible del navegador*/
+            background-color: rgba(0, 0, 0, 0.8); /*Fondo oscuro semitransparente*/     ;       
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*Asegurar que esté por encima del resto del contenido*/
+           z-index: 1000;
+        }
+
+        #overlay img{
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 100%;
+            /*box-shadow: desplazamientoX desplazamientoY Desenfoque Color*/
+            box-shadow: 0 0 20px #FFF;
+        }
+        #cerrarBtn{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #FFF;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cerrarBtn:hover{
+            background-color: #DDD;
+        }
+/*BOTON ARRIBA*/
+#btnArriba {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posicionamiento fijo en la pantalla */
+    bottom: 30px; /* Distancia desde la parte inferior */
+    right: 30px; /* Distancia desde la parte derecha */
+    z-index: 99; /* Asegura que esté por encima de otros elementos */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno al hacer clic */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    padding: 15px 20px; /* Espaciado interno */
+    border-radius: 50%; /* Forma circular */
+    font-size: 24px; /* Tamaño del texto/flecha */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave para efectos */
+}
+
+#btnArriba:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+    transform: translateY(-3px); /* Pequeño efecto de elevación al pasar el ratón */
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Carrusel inicio */
+@media (max-width: 992px) {
+  .card img {
+    width: 140px; /* Reduce el tamaño de las imágenes */
+    height: 150px;
+  }
+  .group {
+    gap: 15px; /* Reduce el espacio entre tarjetas */
+    padding-right: 15px;
+    animation-duration: 20s; /* Haz la animación un poco más rápida */
+  }
+
+  /* Cuerpo Inicio */
+  .principal {
+    flex-direction: column; /* Apila las columnas verticalmente */
+    height: auto; /* Permite que la altura se ajuste al contenido apilado */
+  }
+  .izquierda,
+  .derecha {
+    width: auto; /* Permite que cada columna ocupe el ancho disponible */
+    margin: 15px; /* Ajusta el margen si las columnas se apilan */
+    min-width: unset; /* Quita el min-width para que puedan encogerse más si es necesario */
+  }
+  .titIzq {
+    font-size: 2rem; /* Reduce el tamaño del título izquierdo */
+  }
+  .car {
+    font-size: 1.8rem; /* Reduce el tamaño del título de características */
+  }
+  .izquierda p {
+    font-size: 0.95rem; /* Reduce un poco el tamaño del texto */
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /* Carrusel Inicio */
+  .carruselin {
+    padding: 15px 0; /* Reduce el padding del contenedor */
+  }
+  .card img {
+    width: 120px; /* Reduce aún más el tamaño de las imágenes */
+    height: 130px;
+    border-radius: 18px; /* Ajusta el radio del borde */
+  }
+  .group {
+    gap: 10px; /* Espacio aún más pequeño entre tarjetas */
+    padding-right: 10px;
+    animation-duration: 15s; /* Haz la animación más rápida para móviles */
+  }
+
+  /* Cuerpo Inicio */
+  .seccionPrincipalIn {
+    padding: 10px; /* Menos padding general */
+  }
+  .izquierda,
+  .derecha {
+    margin: 10px; /* Márgenes aún más pequeños */
+    padding: 15px; /* Menos padding interno */
+  }
+  .titIzq {
+    font-size: 1.8rem; /* Título aún más pequeño */
+    margin-bottom: 10px;
+  }
+  .car {
+    font-size: 1.6rem; /* Título de características más pequeño */
+    margin-bottom: 15px;
+  }
+  .izquierda p {
+    font-size: 0.9rem; /* Texto más pequeño para móviles */
+    margin-bottom: 10px;
+  }
+
+  /* Carrusel Productos */
+  .carrusel {
+    width: 473px;
+    height: 695px;
+  }
+  .boton {
+    font-size: 1.5rem; /* Reduce el tamaño del botón para pantallas más pequeñas */
+    padding: 0.3rem 0.6rem;
+  }
+
+  /* Footer */
+  .piepagina {
+    align-items: center; /* Centra verticalmente los elementos en la misma línea */
+  }
+  .logopie {
+    margin-bottom: 20px; /* Más espacio debajo del logo */
+  }
+  .piepagina ul {    
+    width: 100%; /* La lista ocupa todo el ancho */    
+    margin-top: 0;
+  }
+  .piepagina li {
+    margin: 8px 0; /* Reduce el margen entre ítems apilados */    
+    width: 100%; /* Cada ítem ocupa todo el ancho disponible */
+  }
+  .iconos {
+    width: 25px; /* Iconos un poco más pequeños */
+  }
+}
+
+@media (max-width: 480px) {
+
+    /* Carrusel Inicio */
+    .card img {
+    width: 90px; /* Imágenes más pequeñas para asegurar que al menos algunas quepan */
+    height: 100px;
+    border-radius: 12px;
+  }
+  .group {
+    gap: 8px;
+    padding-right: 8px;
+    animation-duration: 12s;
+  }  
+
+    /* Carrusel Productos */
+  .carrusel {
+    width: 331px;
+    height: 487px;
+  }
+  .boton {
+    font-size: 1.2rem; /* Aún más pequeño en pantallas muy pequeñas */
+    padding: 0.2rem 0.4rem;
+  }
+  .next {
+    right: 5px; /* Reduce el margen para los botones en pantallas pequeñas */
+  }
+  .prev {
+    left: 5px; /* Reduce el margen para los botones en pantallas pequeñas */
+  }
+
+    /* Footer */
+  .piepagina {
+    padding: 0 15px; /* Reduce el padding horizontal del footer */
+  }
+  .logopie {
+    max-width: 120px; /* Logo más pequeño en móviles */
+    margin-bottom: 15px;
+  }
+  .piepagina li {
+    font-size: 0.9rem; /* Texto de los ítems más pequeño */
+  }
+  .iconos {
+    width: 20px; /* Iconos aún más pequeños */
+  }
+} 
